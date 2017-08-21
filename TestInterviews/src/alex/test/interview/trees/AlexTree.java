@@ -34,10 +34,12 @@ public class AlexTree {
 		Stack<AlexNode> stack = new Stack<>();
 		stack.push(this.root);
 
+		StringBuilder sb = new StringBuilder();
+		
 		while (!stack.isEmpty()) {
 			AlexNode currentNode = stack.pop();
 
-			System.out.print(currentNode.getName());
+			sb.append(currentNode.getName());
 
 			// Primero adicionamos el derecho para que lo saque del stack de
 			// segundas
@@ -50,7 +52,7 @@ public class AlexTree {
 			}
 		}
 
-		System.out.println();
+		System.out.println(sb.toString());
 	}
 
 	// TODO MorrisTraversal
@@ -65,6 +67,8 @@ public class AlexTree {
 
 		AlexNode currentNode = root;
 
+		StringBuilder sb = new StringBuilder();
+		
 		while (!stack.isEmpty() || currentNode != null) {
 			
 			if (currentNode != null) {
@@ -73,13 +77,13 @@ public class AlexTree {
 			} else {
 				currentNode = stack.pop();
 				
-				System.out.print(currentNode.getName());
+				sb.append(currentNode.getName());
 				
 				currentNode = currentNode.getRight();
 			}
 		}
 
-		System.out.println();
+		System.out.println(sb.toString());
 	}
 
 	private void transversePreOrder(AlexNode node) {
