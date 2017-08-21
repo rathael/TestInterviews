@@ -32,11 +32,13 @@ public class TreeExecutor {
 		
 		AlexTree tree = new AlexTree(root);
 		
-		// Esperado A B D H I E C F G J
+		// Esperado ABDHIECFGJ
 		tree.transversePreOrder();
+		tree.transversePreOrderWithoutRecursion();
 		
 		// Esperado HDIBEAFCJG
 		tree.transverseInOrder();
+		tree.transverseInOrderWithoutRecursion();
 		
 		// Esperado HIDEBFJGCA
 		tree.transversePostOrder();
