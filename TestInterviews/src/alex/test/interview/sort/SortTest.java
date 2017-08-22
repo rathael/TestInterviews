@@ -10,8 +10,12 @@ public class SortTest {
 		
 		Bubblesort bubblesort = new Bubblesort();
 		
+		// Se espera 7 9 15 26 27 50 
 		bubblesort.sort(data);
 		
+		data = new int[]{50, 26, 7, 9, 15, 27};
+		Mergesort mergesort = new Mergesort();
+		mergesort.sort(data);
 	}
 
 }
