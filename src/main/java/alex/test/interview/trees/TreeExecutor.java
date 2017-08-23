@@ -1,5 +1,8 @@
 package alex.test.interview.trees;
 
+import alex.test.interview.trees.search.BreadthFirstSearch;
+import alex.test.interview.trees.transverse.Transverser;
+
 public class TreeExecutor {
 
 	public TreeExecutor() {
@@ -32,16 +35,27 @@ public class TreeExecutor {
 		
 		AlexTree tree = new AlexTree(root);
 		
+		Transverser transverser = new Transverser(tree.getRoot());
+		
 		// Esperado ABDHIECFGJ
-		tree.transversePreOrder();
-		tree.transversePreOrderWithoutRecursion();
+		transverser.transversePreOrder();
+		transverser.transversePreOrderWithoutRecursion();
+		
+		// Esperado ABCDEFGHIJ
+		transverser.transverseBFS();
 		
 		// Esperado HDIBEAFCJG
-		tree.transverseInOrder();
-		tree.transverseInOrderWithoutRecursion();
+		transverser.transverseInOrder();
+		transverser.transverseInOrderWithoutRecursion();
 		
 		// Esperado HIDEBFJGCA
-		tree.transversePostOrder();
+		transverser.transversePostOrder();
+		
+		
+		
+		// BFS
+		BreadthFirstSearch bfs = new BreadthFirstSearch(tree.getRoot(), "H");
+		bfs.search();
 	}
 
 }
